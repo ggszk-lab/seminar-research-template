@@ -1,0 +1,173 @@
+\documentclass[platex,dvipdfmx,a4paper,11pt,twocolumn]{jsarticle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%       設定        %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[top=20mm,bottom=25mm,left=15mm,right=15mm,columnsep=2em]{geometry}
+\usepackage{titlesec}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{otf}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{braket}
+\usepackage{wrapfig}
+\usepackage{comment}
+\usepackage[japanese]{babel}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{pxjahyper}
+\usepackage{bookmark}
+\usepackage{mweights}
+\usepackage{xurl}
+
+% ハイパーリンク設定
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+
+% listings 設定
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{gray!10},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,
+  tabsize=2,
+  captionpos=b,
+  breaklines=true,
+  breakatwhitespace=false,
+  escapeinside={\%*}{*)}
+}
+\renewcommand{\lstlistingname}{リスト}
+
+% セクション番号・スタイル
+\renewcommand{\thesection}{\arabic{section}.}
+\titleformat{\section}{\normalfont\fontsize{12pt}{15pt}\bfseries}{\thesection}{1em}{}
+
+% キャプション設定
+\captionsetup[figure]{labelsep=period}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  ヘッダ・フッタ   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\setlength{\headheight}{25.03725pt}
+\addtolength{\topmargin}{-2.5mm}
+
+%% ===== 設定用コマンド =====
+%% 年度（必須：書き換えてください）
+\newcommand{\nendo}{20xx}
+
+%% 指導教員（デフォルト: 鈴木源吾．変更する場合のみ書き換え）
+\newcommand{\teacher}{鈴木源吾}
+
+% ヘッダ
+\fancyhead[L]{\fontsize{10pt}{12pt}\selectfont 開志専門職大学 \ 情報学部\\
+\nendo 年度 \ ICT活用総合実習 \ 最終報告要旨}
+\fancyhead[R]{}
+
+% フッタ（ページ番号なし）
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  タイトルまわり   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\@bangou{}
+\def\@teacher{}
+
+\newcommand{\bangou}[1]{\gdef\@bangou{#1}}
+
+\renewcommand{\@maketitle}{%
+  \begin{center}
+    \vspace{-10pt}
+    {\bfseries \fontsize{16pt}{20pt}\selectfont \@title \par}
+    \vspace{10pt}
+    {\fontsize{12pt}{15pt}\selectfont \@author \par}
+    \vspace{10pt}
+    {\fontsize{12pt}{15pt}\selectfont
+      \begin{tabular}{r@{: }l}
+        学籍番号 &\quad \@bangou \\
+        指導教員 &\quad \teacher \\
+      \end{tabular}}
+    \vspace{15pt}
+  \end{center}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  タイトル・著者名等  %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 年度を指定
+\renewcommand{\nendo}{2026}
+
+%% タイトル
+\title{○○を用いた△△の分析と考察}
+
+%% 著者名
+\author{開志 太郎}
+
+%% 学籍番号
+\bangou{201XX01}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%ここから内容%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+\fontsize{11pt}{14pt}\selectfont
+
+\section{背景と目的}
+
+（研究の背景と，本研究で取り組む目的を記述する．）
+
+\section{研究方法}
+
+（使用するデータ・手法・実験方法などを記述する．）
+
+\section{結果と考察}
+
+（得られた結果を示し，考察を加える．図表は以下のように配置する．）
+
+%% 図を挿入する場合は以下のコメントを外して使ってください．
+%% 画像ファイルは image/ フォルダに配置します．
+% \begin{figure}[H]
+%   \includegraphics[width=80mm]{image/sample.png}
+%   \caption{実験結果の例}
+%   \label{fig:result}
+% \end{figure}
+
+（今後の課題や展望についても述べる．）
+
+\begin{thebibliography}{99}
+  \fontsize{11pt}{11pt}\selectfont
+
+  \bibitem{ref1}
+  著者名，タイトル，出版情報，年．
+
+  \bibitem{ref2}
+  著者名，タイトル，\url{https://example.com}
+
+\end{thebibliography}
+
+\end{document}
