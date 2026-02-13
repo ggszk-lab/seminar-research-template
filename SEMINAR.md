@@ -88,7 +88,29 @@ milestones/
 
 ---
 
-## 7. 困ったときは
+## 7. マイルストーン別チェックリスト
+
+### 01_proposal（テーマ決定時）
+- [ ] `milestones/01_proposal/README.md` を記入した
+- [ ] `00_context/context.md` に研究目的・RQ・範囲を記入した
+- [ ] テーマについて教員と合意した
+
+### 02_midterm（中間報告時）
+- [ ] `milestones/02_midterm/README.md` を記入した
+- [ ] `00_context/decisions.md` に主要な判断を記録した
+- [ ] 分析・実装の進捗が `02_work/` に整理されている
+- [ ] 中間報告の資料が `04_docs/slides/` に保存されている
+
+### 03_final（最終報告時）
+- [ ] `milestones/03_final/README.md` を記入した
+- [ ] 最終的な結果が `03_results/` に整理されている
+- [ ] 論文・最終レポートが `04_docs/paper/` に保存されている
+- [ ] `00_admin/checklist.md` の全項目を確認した
+- [ ] 生成AI利用の記録を残した
+
+---
+
+## 8. 困ったときは
 
 - フォルダの使い方に迷ったら，まず README を確認してください
 - 不明点や判断に迷う点は，早めに相談してください
