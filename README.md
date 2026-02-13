@@ -14,7 +14,6 @@
 ```text
 research-template/
 ├── README.md
-├── LICENSE
 ├── .gitignore
 ├── CLAUDE.md                          # AI設定: Claude Code 向け指示
 ├── .github/
@@ -131,4 +130,3 @@ CLAUDE.md / .github/copilot-instructions.md
 - `.gitignore` はデフォルトで `01_data/` や `03_results/exports/` を無視する設定にしています（プロジェクトの性質に応じて調整してください）。
 - `01_data/schema/` はバージョン管理対象です（`.gitignore` の対象外）。
 - `analysis/` には SQL・Notebook・スクリプトを混在させて構いません（分析の単位で整理することを優先します）。
-- 本テンプレートは MIT License で公開しています。
