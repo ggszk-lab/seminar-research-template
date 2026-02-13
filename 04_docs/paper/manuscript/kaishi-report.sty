@@ -1,0 +1,52 @@
+% kaishi-report.sty
+% 開志専門職大学 ICT活用総合実習 最終報告書用カスタムスタイル
+%
+% 情報処理学会研究報告 (ipsjtech.sty) のヘッダ・フッタを
+% ゼミ報告書用に上書きするスタイルファイルです．
+%
+% 使い方:
+%   \documentclass[submit,techrep,noauthor]{ipsj}
+%   \usepackage{kaishi-report}
+%
+% 注意:
+%   - \author は記述してください（タイトル下に著者名が表示されます）
+%   - \affiliate は不要です（所属の脚注は表示しません）
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kaishi-report}[2026/02/14 Kaishi report style]
+
+%% ===== 設定用コマンド =====
+% 年度（デフォルト: 20xx）
+\newcommand{\nendo}[1]{\gdef\@nendo{#1}}
+\gdef\@nendo{20xx}
+
+% 指導教員名（デフォルト: 鈴木源吾）
+\newcommand{\advisor}[1]{\gdef\@advisor{#1}}
+\gdef\@advisor{鈴木源吾}
+
+%% ===== ヘッダ・フッタの再定義 =====
+% ipsjtech.sty で定義される \ps@IPSJTITLEheadings を上書きする
+\AtBeginDocument{%
+  \def\ps@IPSJTITLEheadings{%
+    % ヘッダ: 開志専門職大学の報告書情報（2行）
+    \def\@oddhead{%
+      \@Ltop
+      \rlap{\small\textbf{%
+        \shortstack[l]{%
+          開志専門職大学\hspace{0.5zw}\@nendo 年度ICT活用総合実習最終報告書\\[2pt]%
+          \hspace{1zw}指導教員：\@advisor
+        }%
+      }}%
+      \hfil\@Rtop
+    }%
+    \let\@evenhead\@oddhead
+    % フッタ: ページ番号のみ（著作権表示なし）
+    \def\@oddfoot{%
+      \@Lbot\hfil{\thepage}\@Rbot
+    }%
+    \let\@evenfoot\@oddfoot
+    \let\@mkboth\@gobbletwo
+  }%
+  % 再適用
+  \pagestyle{IPSJTITLEheadings}%
+}

@@ -37,3 +37,14 @@ venv/
 
 # Logs
 *.log
+
+# LaTeX build artifacts
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
